@@ -1,19 +1,22 @@
-from ggame import App, Color, LineStyle, Sprite
-from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset
+ from ggame import App, Color, LineStyle, Sprite
+ from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset
 
 # Three primary colors with no transparency (alpha = 1.0)
-red = Color(0xff0000, 1.0)
-green = Color(0x00ff00, 1.0)
-blue = Color(0x0000ff, 1.0)
-black = Color(0x000000, 1.0)
+ red = Color(0xff0000, 0.5)
+ green = Color(0x00ff00, 1.0)
+ blue = Color(0x0000ff, 1.0)
+ black = Color(0x000000, 1.0)
 
 # Define a line style that is a thin (1 pixel) wide black line
-thinline = LineStyle(1, black)
+ thinline = LineStyle(1, black)
 # A graphics asset that represents a rectangle
-rectangle = RectangleAsset(50, 20, thinline, blue)
+ rectangle = EllipseAsset(500, 200, thinline, blue)
+
+ Pentagon = PolygonAsset([(0,0), (500,0), (700,200), (0,600), (0,0)], thinline, red)
 
 # Now display a rectangle
-Sprite(rectangle)
+ Sprite(rectangle)
+ Sprite(Pentagon)
 
-myapp = App()
-myapp.run()
+ myapp = App()
+ myapp.run()
